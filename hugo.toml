@@ -1,0 +1,23 @@
+baseURL = "/"
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+disableKinds = ["taxonomy", "term"]
+title = "Silvan Wegmann - Topics, Coaching and Student Projects"
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = false
+
+[languages]
+  [languages.en]
+    label = "English"
+    locale = "en"
+    title = "Silvan Wegmann - Topics, Coaching and Student Projects"
+    weight = 1
+
+  [languages.de]
+    label = "Deutsch"
+    locale = "de-CH"
+    title = "Silvan Wegmann - Themen, Coaching und Studierendenprojekte"
+    weight = 2

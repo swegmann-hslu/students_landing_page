@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="{{ .Language.Locale }}">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ .Title }}</title>
+    <meta name="description" content="{{ .Description }}">
+    <link rel="stylesheet" href="{{ "styles.css" | relURL }}">
+  </head>
+  <body>
+    <header class="hero">
+      <nav class="topbar" aria-label="{{ .Params.nav_label }}">
+        <a class="brand" href="#top" aria-label="{{ .Params.top_label }}">Silvan Wegmann</a>
+        <div class="nav-links">
+          <a href="{{ .Params.profile_url }}">{{ .Params.profile_label }}</a>
+          <a href="{{ .Params.github_url }}">{{ .Params.github_label }}</a>
+          {{ if eq .Language.Lang "de" }}
+            <a class="language-link" href="../">English</a>
+            <span class="language-current" aria-current="page">Deutsch</span>
+          {{ else }}
+            <span class="language-current" aria-current="page">English</span>
+            <a class="language-link" href="de/">Deutsch</a>
+          {{ end }}
+        </div>
+      </nav>
+      <div class="hero-inner" id="top">
+        <div class="hero-copy">
+          <p class="eyebrow">{{ .Params.eyebrow }}</p>
+          <p class="tagline">{{ .Params.tagline }}</p>
+          <p class="hero-summary">{{ .Params.hero_summary }}</p>
+          <div class="hero-actions">
+            <a class="button primary" href="{{ .Params.primary_target }}">{{ .Params.primary_action }}</a>
+            <a class="button secondary" href="{{ .Params.secondary_target }}">{{ .Params.secondary_action }}</a>
+          </div>
+        </div>
+        <div class="hero-panel" aria-hidden="true">
+          {{ if eq .Language.Lang "de" }}
+            <img class="hero-teaser" src="../hero-teaser.png" alt="">
+          {{ else }}
+            <img class="hero-teaser" src="hero-teaser.png" alt="">
+          {{ end }}
+        </div>
+      </div>
+    </header>
+
+    <main class="page-shell">
+      <article class="content">
+        {{ .Content }}
+      </article>
+    </main>
+  </body>
+</html>
